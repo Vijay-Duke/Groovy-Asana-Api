@@ -41,7 +41,7 @@ public class TaskOperationsTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		 asana = new Asana("1EUSjL1y.lO0jmAQEYB60l5wt8HKQdEj");
+		 asana = new Asana("API_KEY");
 		taskOperator = asana.TaskOperations();
 		workspace = asana.WorkspaceOperations().getAllWorkspaces().get(0);
 		owner = asana.UserOperations().getUser();

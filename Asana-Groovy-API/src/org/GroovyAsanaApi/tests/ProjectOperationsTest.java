@@ -19,7 +19,7 @@ import org.GroovyAsanaApi.Exception.RateLimitEnforcedException;
 
 public class ProjectOperationsTest {
 
-	Asana asana = new Asana("1EUSjL1y.lO0jmAQEYB60l5wt8HKQdEj");
+	Asana asana = new Asana("API_KEY");
 	static Project pt;
 	public Project p;
 	

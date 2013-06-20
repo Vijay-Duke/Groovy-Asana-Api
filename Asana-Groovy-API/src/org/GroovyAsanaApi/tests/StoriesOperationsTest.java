@@ -19,7 +19,7 @@ import org.GroovyAsanaApi.Exception.NotFoundException;
 import org.GroovyAsanaApi.Exception.RateLimitEnforcedException;
 
 public class StoriesOperationsTest {
-	Asana asana = new Asana("1EUSjL1y.lO0jmAQEYB60l5wt8HKQdEj");
+	Asana asana = new Asana("API_KEY");
 	
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {

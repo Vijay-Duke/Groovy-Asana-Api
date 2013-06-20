@@ -14,7 +14,7 @@ import org.GroovyAsanaApi.Exception.NotFoundException;
 import org.GroovyAsanaApi.Exception.RateLimitEnforcedException;
 
 public class TagOperationsTest {
-	Asana asana = new Asana("1EUSjL1y.lO0jmAQEYB60l5wt8HKQdEj");
+	Asana asana = new Asana("API_KEY");
 
 	@After
 	public void tearDown() throws Exception {
