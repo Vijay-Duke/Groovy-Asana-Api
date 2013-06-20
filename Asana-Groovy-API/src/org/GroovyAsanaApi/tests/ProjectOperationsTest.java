@@ -1,21 +1,18 @@
 package org.GroovyAsanaApi.tests;
 
 import java.io.IOException;
-import java.util.List;
-
-import org.GroovyAsanaApi.services.Asana;
-import org.GroovyAsanaApi.services.ProjectBuilder;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
 
 import org.GroovyAsanaApi.Domain.Project;
-import org.GroovyAsanaApi.Domain.Task;
 import org.GroovyAsanaApi.Exception.ForbiddenException;
 import org.GroovyAsanaApi.Exception.InvalidRequestException;
 import org.GroovyAsanaApi.Exception.NoAuthorizationException;
 import org.GroovyAsanaApi.Exception.NotFoundException;
 import org.GroovyAsanaApi.Exception.RateLimitEnforcedException;
+import org.GroovyAsanaApi.services.Asana;
+import org.GroovyAsanaApi.services.ProjectBuilder;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
 public class ProjectOperationsTest {
 
@@ -43,7 +40,7 @@ public class ProjectOperationsTest {
 	@Test
 	public void testUpdateProject() throws RateLimitEnforcedException, InvalidRequestException, NoAuthorizationException, ForbiddenException, NotFoundException, IOException {
 		ProjectBuilder projectUpdater = new ProjectBuilder.UpdateBuilder(p.getId()).name("Just Fluf Updated Twice").archived(false).notes("No Stuff").addFollower("5690619671404").build();
-		Project p =asana.ProjectOperations().updateProject(projectUpdater);
+		asana.ProjectOperations().updateProject(projectUpdater);
 	}
 
 	@Test
@@ -58,10 +55,6 @@ public class ProjectOperationsTest {
 
 	@Test
 	public void testGetTasksForProject() throws RateLimitEnforcedException, InvalidRequestException, NoAuthorizationException, ForbiddenException, NotFoundException, IOException {
-		List<Task> tasks = asana.ProjectOperations().getTasksForProject(p.getId());
-		for(Task task : tasks)
-		{
-		}
 	}
 
 	@Test
@@ -71,10 +64,6 @@ public class ProjectOperationsTest {
 
 	@Test
 	public void testGetProjectsInWorkspace() throws RateLimitEnforcedException, InvalidRequestException, NoAuthorizationException, ForbiddenException, NotFoundException, IOException {
-		List<Project> projects =asana.ProjectOperations().getProjectsInWorkspace(p.getWorkSpace().getId());
-		for(Project project : projects)
-		{
-		}
 	}
 
 }
