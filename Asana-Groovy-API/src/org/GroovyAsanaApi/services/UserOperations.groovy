@@ -22,8 +22,25 @@ class UserOperations {
 	private final String OPTIONS="?opt_fields=name,email"
 	private final String WORKSPLACES_URL ="/workspaces/";
 	private final String USERS ="/users";
+	
 	private List<Workspace> workspaces
 	private Asana operator;
+
+	 List<Workspace> getWorkspaces() {
+		return workspaces;
+	}
+	 void setWorkspaces(List<Workspace> workspaces) {
+		this.workspaces=workspaces;
+	}
+	 UserOperations(Asana Operator) {
+		this.operator = Operator;
+	}
+	Asana getOperator() {
+		return operator;
+	}
+	public setOperator(Asana Operator) {
+		this.operator = Operator;
+	}
 	public List<User> getAllUser() throws RateLimitEnforcedException,InvalidRequestException,NoAuthorizationException,ForbiddenException,NotFoundException,IOException {
 		String 	allUserUrl =  USER_URL+OPTIONS;
 		String  userData =operator.getMethod(allUserUrl);

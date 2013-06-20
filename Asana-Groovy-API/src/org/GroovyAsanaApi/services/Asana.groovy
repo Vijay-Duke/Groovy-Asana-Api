@@ -121,7 +121,7 @@ public class Asana {
 		return data;
 	}
 
-	public String httpStreamToString(InputStream inputStream) {
+	private String httpStreamToString(InputStream inputStream) {
 
 		try {
 			return new Scanner(inputStream).useDelimiter("\\A").next();
