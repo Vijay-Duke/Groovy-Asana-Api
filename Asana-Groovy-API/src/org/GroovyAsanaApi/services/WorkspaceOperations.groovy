@@ -15,9 +15,9 @@ import org.GroovyAsanaApi.Exception.RateLimitEnforcedException;
 public class WorkspaceOperations {
 
 	private Asana operator;
-	public final String organizations_url = "/organizations";
-	public final String WORKSPACE_URL = "/workspaces";
-	public final String TEAM_URL = "/teams";
+	private final String organizations_url = "/organizations";
+	private final String WORKSPACE_URL = "/workspaces";
+	private final String TEAM_URL = "/teams";
 
 	public WorkspaceOperations(Asana Operator) {
 		this.operator = Operator;

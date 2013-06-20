@@ -41,7 +41,7 @@ public class TaskOperationsTest {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		 asana = new Asana("API_KEY");
+		 asana = new Asana("1EUSjL1y.eP1S02i0fou3jTc00lmCHDP");
 		taskOperator = asana.TaskOperations();
 		workspace = asana.WorkspaceOperations().getAllWorkspaces().get(0);
 		owner = asana.UserOperations().getUser();
@@ -133,7 +133,7 @@ public class TaskOperationsTest {
 
 	@Test
 	public void testAddTagToTask() throws RateLimitEnforcedException, InvalidRequestException, NoAuthorizationException, ForbiddenException, NotFoundException, IOException {
-		TagBuilder tagBuilder = new TagBuilder.CreateBuilder(workspace.getId()+3434)
+		TagBuilder tagBuilder = new TagBuilder.CreateBuilder(workspace.getId())
 				.name("New Tag").build();
 		Tag t = asana.TagOperations().createTag(tagBuilder);
 		int previousSize = allTasks.get(0).getTags().size();
@@ -252,7 +252,7 @@ public class TaskOperationsTest {
 	public void testSetParentForTask() throws RateLimitEnforcedException, InvalidRequestException, NoAuthorizationException, ForbiddenException, NotFoundException, IOException {
 		Task t = taskOperator.setParentForTask(allTasks.get(1).getId(),
 				task.getId());
-		assertEquals(task.getId(), allTasks.get(1).getParent().getId());
+		assertEquals(task.getId(),taskOperator.getTaskById(allTasks.get(1).getId()).getParent().getId());
 	}
 
 	@Test
