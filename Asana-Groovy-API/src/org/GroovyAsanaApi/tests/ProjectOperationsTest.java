@@ -22,8 +22,6 @@ public class ProjectOperationsTest {
 	Asana asana = new Asana("API_KEY");
 	static Project pt;
 	public Project p;
-	
-	
 	@Before
 	public void setUp() throws Exception {
 		ProjectBuilder projectCreator = new ProjectBuilder.CreateBuilder("5845709905944").name("Just Fluf").notes("No Stuff").addFollower("5690619671404").build();

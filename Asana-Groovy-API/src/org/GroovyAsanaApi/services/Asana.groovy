@@ -22,9 +22,9 @@ import org.codehaus.groovy.runtime.EncodingGroovyMethods
 public class Asana {
 	private  final String url = "https://app.asana.com/api/";
 	private final String apiUrl = url + "1.0";
-	public final String USER_URL ="/users/";
-	public final String WORKSPLACES_URL ="/worlspaces/";
-	public final String API_URL="";
+	private final String USER_URL ="/users/";
+	private final String WORKSPLACES_URL ="/worlspaces/";
+	private final String API_URL="";
 	private UserOperations userOperations;
 	private TaskOperations taskOperations;
 	private ProjectOperations projectOperations;
