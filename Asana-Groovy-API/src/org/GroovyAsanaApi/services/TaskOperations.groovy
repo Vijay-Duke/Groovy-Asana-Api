@@ -6,6 +6,7 @@ import java.util.List;
 import org.codehaus.groovy.classgen.ReturnAdder;
 
 import org.GroovyAsanaApi.Domain.Project;
+import org.GroovyAsanaApi.Domain.Story;
 import org.GroovyAsanaApi.Domain.SubTask;
 import org.GroovyAsanaApi.Domain.Tag;
 import org.GroovyAsanaApi.Domain.Task
@@ -27,14 +28,14 @@ import groovy.json.JsonSlurper
 class TaskOperations {
 
 
-	String openPostData ="""{"data": { """
-	String closePostData ="""}} """
-	String postData="";
-	public  final String NullNullTaskIdExceptionMessage ="Tasks ID is Mandatory"
-	public  final String NullWorkSpaceExceptionMessage="WorkSpace is Mandatory and WorkSpace ID Cannot be Null"
+	private String openPostData ="""{"data": { """
+	private String closePostData ="""}} """
+	private String postData="";
+	private  final String NullNullTaskIdExceptionMessage ="Tasks ID is Mandatory"
+	private  final String NullWorkSpaceExceptionMessage="WorkSpace is Mandatory and WorkSpace ID Cannot be Null"
 	private Asana operator;
-	public final String TASK_URL ="/tasks";
-	public final String WORKSPLACES_URL ="/workspaces/"
+	private final String TASK_URL ="/tasks";
+	private final String WORKSPLACES_URL ="/workspaces/"
 	public TaskOperations(Asana Operator) {
 		this.operator = Operator;
 	}
@@ -241,6 +242,10 @@ class TaskOperations {
 		return  operator.TagOperations().getTasksByTag(tagId);
 	}
 
+	public Story CommentOnTask(String taskId,String comment)
+	{
+		return operator.StoriesOperations().CommentOnTask(taskId, comment);
+	}
 
 
 

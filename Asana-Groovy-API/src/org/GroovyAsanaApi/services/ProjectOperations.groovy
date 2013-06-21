@@ -3,6 +3,7 @@ package org.GroovyAsanaApi.services
 import java.io.IOException;
 
 import org.GroovyAsanaApi.Domain.Project
+import org.GroovyAsanaApi.Domain.Story;
 import org.GroovyAsanaApi.Domain.Task;
 import org.GroovyAsanaApi.Exception.ForbiddenException;
 import org.GroovyAsanaApi.Exception.InvalidRequestException;
@@ -90,5 +91,10 @@ class ProjectOperations {
 			projects.add(project)
 		}
 		return projects;
+	}
+	
+	public Story CommentOnProject(String projectId,String comment)
+	{
+		return operator.StoriesOperations().CommentOnProject(projectId, comment);
 	}
 }
