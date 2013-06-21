@@ -19,7 +19,7 @@ Asana has Following Operations</br>
 </ul>
 
 <b>TASK OPERATIONS</b><br/>
-Create Task</br>
+Create Task
 <pre><code>
 TaskBuilder createTask = new TaskBuilder.CreateBuilder("Workspace_id")
 					.assignee("USER_ID")
@@ -30,7 +30,7 @@ TaskBuilder createTask = new TaskBuilder.CreateBuilder("Workspace_id")
 Task task = asana.TaskOperations().createTask(createTask);
 </code></pre>
 
-Update Task<br/>
+Update Task
 <pre><code>
 TaskBuilder taskBuilder = new TaskBuilder.UpdateTaskBuilder("TASK_ID)
 					 .updateName(updateName)
@@ -38,17 +38,17 @@ TaskBuilder taskBuilder = new TaskBuilder.UpdateTaskBuilder("TASK_ID)
 task updatedTask = asana.TaskOperations().updateTask(taskBuilder);
 </code></pre>
 
-Get Task<br/>
+Get Task
 <pre><code>
 Task t = asana.TaskOperations().getTaskById("Task_ID");
 </code></pre>
-Delete Task<br/>
+Delete Task
 <pre><code>
  asana.TaskOperations().deleteTask(t.getId());
 </code></pre>
 
 <b>PROJECT OPERATIONS</b><br/>
-Create Project<br/>
+Create Project
 <pre><code>
 ProjectBuilder projectCreator = new ProjectBuilder.CreateBuilder("WORKSPACE_ID")
 						  .name("Just Fluf")
@@ -57,7 +57,7 @@ ProjectBuilder projectCreator = new ProjectBuilder.CreateBuilder("WORKSPACE_ID")
 						  .build();
 Project p =asana.ProjectOperations().createProject(projectCreator);
 </code></pre>
-update Project<br/>
+update Project
 <pre><code>
 ProjectBuilder projectUpdater = new ProjectBuilder.UpdateBuilder("PROJECT_ID")
 						  .name("Just Fluf Updated")
@@ -67,17 +67,17 @@ ProjectBuilder projectUpdater = new ProjectBuilder.UpdateBuilder("PROJECT_ID")
 						  .build();
 asana.ProjectOperations().updateProject(projectUpdater);
 </code></pre>
-delete project<br/>
+delete project
 <pre><code>
 asana.ProjectOperations().deleteProject("PROJECT_ID");
 </code></pre>
-get Project<br/>
+get Project
 <pre><code>
 asana.ProjectOperations().getProjectById("PROJECT_ID");
 </code></pre>
 
 <b>TAG OPERATIONS</b><br/>
-create Tag<br/>
+create Tag
 <pre><code>
 TagBuilder tagBuilder = new TagBuilder.CreateBuilder("WORKSPACE_ID")
 				      .name("Tag 2")
@@ -85,7 +85,7 @@ TagBuilder tagBuilder = new TagBuilder.CreateBuilder("WORKSPACE_ID")
 				      .build();
 Tag tag = asana.TagOperations().createTag(tagBuilder);
 </code></pre>
-Update Tag<br/>
+Update Tag
 <pre><code>
 TagBuilder tagBuilder = new TagBuilder.UpdateBuilder("WORKSPACE_ID")
 				.name("updated Tag 2")
@@ -93,10 +93,19 @@ TagBuilder tagBuilder = new TagBuilder.UpdateBuilder("WORKSPACE_ID")
 				.build();
 Tag tag = asana.TagOperations().updateTag(tagBuilder);
 </code></pre>
-Get Tag<br/>
+Get Tag
 <pre><code>
 asana.TagOperations().getTagById("WORKSPACE_ID");
 </code></pre>
+<b>STORIES OPERATIONS</b><br/>
+Aviliable Opertions :
+<ul>
+<li>Get Stories For A Task</li>
+<li>Get Stories For A Project</li>
+<li>Get Story By Id</li>
+<li>Comment On Task</li>
+<li>Comment On Project</li>
 
+</ul>
 
 
